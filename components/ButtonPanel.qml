@@ -1,11 +1,31 @@
 import QtQuick 2.0
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 
-Rectangle {
-    width: 100
-    height: 100
-    color: "lightblue"
+Item {
 
-    Text{
-        text: "Button panel"
+    GridLayout {
+        anchors.fill: parent
+        rows: 5
+        columns: 4
+
+        Repeater{
+            model: [
+                "C", "+/-", "%", "/",
+                "7", "8", "9", "*",
+                "4", "5", "6", "-",
+                "1", "2", "3", "+",
+                "0", ".", "="
+            ]
+
+            Button{
+                text: modelData
+                font.pixelSize: 30
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+            }
+        }
     }
 }
+
+
