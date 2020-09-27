@@ -3,7 +3,8 @@ import QtQuick 2.0
 Rectangle {
     color: "#111111"
 
-    Text{
+    Text {
+        id: display
         text: "0"
         font.pixelSize: 50
         anchors.right: parent.right

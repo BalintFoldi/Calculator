@@ -3,7 +3,6 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 Item {
-
     GridLayout {
         anchors.fill: parent
         rows: 5
@@ -23,6 +22,8 @@ Item {
                 font.pixelSize: 30
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
+                onClicked: print("Clicked", modelData, typeof(modelData))
             }
         }
     }

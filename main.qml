@@ -13,6 +13,7 @@ Window {
         anchors.fill: parent
 
         Display{
+            id: display
             Layout.fillWidth: true
             Layout.minimumHeight: 60
         }
