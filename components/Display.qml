@@ -4,8 +4,7 @@ Rectangle {
     color: "#111111"
 
     Text {
-        id: display
-        text: "0"
+        text: Engine.result
         font.pixelSize: 50
         anchors.right: parent.right
         anchors.rightMargin: 10

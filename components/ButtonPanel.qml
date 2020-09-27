@@ -23,7 +23,7 @@ Item {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
-                onClicked: print("Clicked", modelData, typeof(modelData))
+                onClicked: Engine.result = modelData
             }
         }
     }

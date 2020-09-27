@@ -6,14 +6,23 @@ class CalcEngine(QObject):
 
     def __init__(self):
         super(CalcEngine, self).__init__()
-
-        self._result = "Hello from Python"
+        self._result = ""
 
     def set_result(self, value):
-        self._result = value
+        if value == "C":
+            self._result = ""
+            self.changed.emit()
+            return
+
+        if value == "=":
+            self._result = str(eval(self._result))
+            self.changed.emit()
+            return
+
+        self._result += value
         self.changed.emit()
 
     def get_result(self):
-        self._result
+        return self._result
 
     result = Property(str, get_result, set_result, notify=changed)
